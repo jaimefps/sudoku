@@ -1,13 +1,13 @@
 class SudokuChecker {
 
-  getCheckList (length) {
+  getNumsList (length) {
     const nums = {}
     for (let i=1; i<=length; i++) nums[i] = 0
     return nums 
   }
 
   isCorrect (list) {
-    const checkList = this.getCheckList(list.length)
+    const checkList = this.getNumsList(list.length)
     list.forEach(num => checkList[num]++)
     return Object.values(checkList).every(x => x == 1)
   }
